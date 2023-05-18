@@ -4,8 +4,7 @@ const { Kafka } = require('kafkajs')
 
 const kafka = new Kafka({
   clientId: 'my-app',
-  brokers: ['localhost:9092',
-	//    'your-kafka-0.my-kafka-headless.kafka-adsoftsito.svc.cluster.local:9092'
+  brokers: ['your-kafka-0.my-kafka-headless.kafka-adsoftsito.svc.cluster.local:9092'
 	  ]
 });
 
@@ -18,7 +17,7 @@ app.options('*', cors());
 const port = 8080;
 
 app.get('/', (req, res, next) => {
-  res.send('kafka api - adsoft');
+  res.send('kafka api - YACRUZ');
 });
 
 const run = async (username) => {
@@ -29,7 +28,7 @@ const run = async (username) => {
       topic: 'test',
       messages: [ 
 	{ 
-	  'value': `{"name": "${username}" }` 
+	  'value': `{"name": "${username}" }`
   	} 
       ],
     })
